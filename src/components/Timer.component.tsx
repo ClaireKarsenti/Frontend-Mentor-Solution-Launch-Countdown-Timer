@@ -52,10 +52,10 @@ function Timer() {
         <h1>We're launching soon</h1>
       </header>
       <CountBoxContainer>
-        <CountBox data={days} />
-        <CountBox data={hours} />
-        <CountBox data={minutes} />
-        <CountBox data={seconds} />
+        <CountBox data={days} unit={'days'} />
+        <CountBox data={hours} unit={'hours'} />
+        <CountBox data={minutes} unit={'minutes'} />
+        <CountBox data={seconds} unit={'secondes'} />
       </CountBoxContainer>
     </Section>
   );
