@@ -32,3 +32,7 @@ export const Section = styled.section`
   }
 `;
 
+export const CountBoxContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;

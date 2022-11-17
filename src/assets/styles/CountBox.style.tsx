@@ -2,18 +2,21 @@ import styled from 'styled-components';
 
 export const CountDown = styled.div`
   display: flex;
-  gap: 2.3em;
   transform: scale(0.5);
+  margin-inline: -2em;
   @media screen and (min-width: 40em) {
     padding-block-start: 5em;
+    margin-inline: -0.5em;
     transform: scale(0.7);
   }
   @media screen and (min-width: 50em) {
     padding-block-start: 6em;
+    margin-inline: 0em;
     transform: scale(0.8);
   }
   @media screen and (min-width: 60em) {
     padding-block-start: 7em;
+    margin-inline: 1em;
     transform: scale(0.9);
   }
   @media screen and (min-width: 80em) {

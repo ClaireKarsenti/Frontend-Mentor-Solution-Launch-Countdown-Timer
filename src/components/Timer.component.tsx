@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import CountBox from './CountBox.component';
 
-import { Section } from '../assets/styles/Timer.style';
+import { Section, CountBoxContainer } from '../assets/styles/Timer.style';
 
 function Timer() {
   const [seconds, setSeconds] = useState<number>(0);
@@ -13,7 +13,7 @@ function Timer() {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-  
+
   const timeToDays = 9 * day;
   const countDownDate = new Date().getTime() + timeToDays;
 
@@ -21,7 +21,7 @@ function Timer() {
     const updateTime = setInterval(() => {
       const now = new Date().getTime();
       const difference = countDownDate - now;
-      
+
       const newSeconds = Math.floor((difference % minute) / second);
       const newMinutes = Math.floor((difference % hour) / minute);
       const newHours = Math.floor((difference % day) / hour);
@@ -51,7 +51,12 @@ function Timer() {
       <header>
         <h1>We're launching soon</h1>
       </header>
-      <CountBox days={days} hours={hours} minutes={minutes} seconds={seconds} />
+      <CountBoxContainer>
+        <CountBox data={days} />
+        <CountBox data={hours} />
+        <CountBox data={minutes} />
+        <CountBox data={seconds} />
+      </CountBoxContainer>
     </Section>
   );
 }
