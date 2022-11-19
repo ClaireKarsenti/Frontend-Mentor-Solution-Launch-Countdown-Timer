@@ -1,12 +1,17 @@
 import { GlobalStyle } from './assets/styles/Global.style';
+import { Section } from './assets/styles/CountDown.style';
+
+import CountDown from './components/CountDown.component';
 import Footer from './components/Footer.component';
-import Timer from './components/Timer.component';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Timer />
+      <Section>
+        <h1>We're launching soon</h1>
+        <CountDown />
+      </Section>
       <Footer />
     </>
   );

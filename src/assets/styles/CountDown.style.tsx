@@ -1,22 +1,47 @@
 import styled from 'styled-components';
 
-export const CountDown = styled.div`
+export const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      line-height: 2rem;
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: var(--fw);
+      width: 100%;
+      margin-block: -10em 2.5em;
+      padding-inline: 1em;
+      @media screen and (min-width: 30em) {
+        padding-inline: 2em;
+      }
+      @media screen and (min-width: 50em) {
+        padding-inline: 0;
+        margin-block: -10em 0.4em;
+        font-size: 1rem;
+      }
+    }
+`;
+
+export const CountDownContainer = styled.div`
   display: flex;
   transform: scale(0.5);
-  margin-inline: -2em;
+  gap: 2em;
   @media screen and (min-width: 40em) {
     padding-block-start: 5em;
-    margin-inline: -0.5em;
     transform: scale(0.7);
   }
   @media screen and (min-width: 50em) {
     padding-block-start: 6em;
-    margin-inline: 0em;
     transform: scale(0.8);
   }
   @media screen and (min-width: 60em) {
     padding-block-start: 7em;
-    margin-inline: 1em;
     transform: scale(0.9);
   }
   @media screen and (min-width: 80em) {
