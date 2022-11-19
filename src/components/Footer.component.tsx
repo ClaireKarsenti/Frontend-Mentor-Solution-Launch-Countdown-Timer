@@ -11,7 +11,7 @@ const Footer = () => {
         <a href="https://www.facebook.com/" aria-label="facebook">
           <img src={facebook} alt="Facebook Logo" />
         </a>
-        <a href="https://br.pinterest.com/" aria-label="pInterest">
+        <a href="https://pinterest.com/" aria-label="pInterest">
           <img src={pInterest} alt="pInterest Logo" />
         </a>
         <a href="https://instagram.com/" aria-label="instagram">
