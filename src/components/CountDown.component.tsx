@@ -7,7 +7,7 @@ const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
-const CountDown = ({ timeToDays = 9 * DAY }) => {
+const CountDown = ({ timeToDays = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND }) => {
   const deadLine = useMemo<number>(() => timeToDays, [timeToDays]);
   const [time, setTime] = useState<number>(deadLine);
 
