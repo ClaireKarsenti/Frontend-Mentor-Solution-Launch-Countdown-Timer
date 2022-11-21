@@ -11,7 +11,7 @@ function App() {
       <GlobalStyle />
       <Section>
         <h1>We're launching soon</h1>
-        <CountDown timeToDays={0} />
+        <CountDown deadLine={0} />
       </Section>
       <Footer />
     </>

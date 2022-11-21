@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -7,15 +7,14 @@ const DAY = HOUR * 24;
 
 export const useTimer = (
   interval = SECOND,
-  timeToDays = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND
+  deadLine = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND
 ) => {
-  const deadLine = useMemo<number>(() => timeToDays, [timeToDays]);
-  const [time, setTime] = useState<number>(deadLine);
+  const [timeSpan, setTimeSpan] = useState<number>(deadLine);
   const countDownDate = new Date().getTime() + deadLine;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTime(countDownDate - Date.now());
+      setTimeSpan(countDownDate - Date.now());
     }, interval);
 
     return () => {
@@ -24,9 +23,9 @@ export const useTimer = (
   }, [deadLine, interval]);
 
   return {
-    Days: time / DAY,
-    Hours: (time / HOUR) % 24,
-    Minutes: (time / MINUTE) % 60,
-    Seconds: (time / SECOND) % 60,
+    Days: timeSpan / DAY,
+    Hours: (timeSpan / HOUR) % 24,
+    Minutes: (timeSpan / MINUTE) % 60,
+    Seconds: (timeSpan / SECOND) % 60,
   };
 };

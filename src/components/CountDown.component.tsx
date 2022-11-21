@@ -2,11 +2,11 @@ import { CountDownContainer } from '../assets/styles/CountDown.style';
 import { useTimer } from '../hook/useTimer';
 
 type CountDownProps = {
-  timeToDays: number;
+  deadLine: number;
 };
 
-const CountDown = ({ timeToDays }: CountDownProps) => {
-  const { Days, Hours, Minutes, Seconds } = useTimer(timeToDays);
+const CountDown = ({ deadLine }: CountDownProps) => {
+  const { Days, Hours, Minutes, Seconds } = useTimer(deadLine);
 
   return (
     <CountDownContainer>
