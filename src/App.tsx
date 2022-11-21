@@ -5,12 +5,13 @@ import CountDown from './components/CountDown.component';
 import Footer from './components/Footer.component';
 
 function App() {
+ 
   return (
     <>
       <GlobalStyle />
       <Section>
         <h1>We're launching soon</h1>
-        <CountDown />
+        <CountDown timeToDays={0} />
       </Section>
       <Footer />
     </>

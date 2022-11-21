@@ -1,34 +1,20 @@
-import { useEffect, useMemo, useState } from 'react';
-
 import { CountDownContainer } from '../assets/styles/CountDown.style';
+import { useTimer } from '../hook/useTimer';
 
-const SECOND = 1000;
-const MINUTE = SECOND * 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
+type CountDownProps = {
+  timeToDays: number;
+};
 
-const CountDown = ({ timeToDays = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND }) => {
-  const deadLine = useMemo<number>(() => timeToDays, [timeToDays]);
-  const [time, setTime] = useState<number>(deadLine);
-
-  const countDownDate = new Date().getTime() + deadLine;
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setTime(countDownDate - Date.now()),
-      1000
-    );
-
-    return () => clearInterval(interval);
-  }, [deadLine]);
+const CountDown = ({ timeToDays }: CountDownProps) => {
+  const { Days, Hours, Minutes, Seconds } = useTimer(timeToDays);
 
   return (
     <CountDownContainer>
       {Object.entries({
-        Days: time / DAY,
-        Hours: (time / HOUR) % 24,
-        Minutes: (time / MINUTE) % 60,
-        Seconds: (time / SECOND) % 60,
+        Days,
+        Hours,
+        Minutes,
+        Seconds,
       }).map(([timeUnit, value]) => (
         <div key={timeUnit} className="card">
           <div className="card-number-wrapper">
