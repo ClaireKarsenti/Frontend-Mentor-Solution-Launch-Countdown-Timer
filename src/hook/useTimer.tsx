@@ -23,9 +23,9 @@ export const useTimer = (
   }, [deadLine, interval]);
 
   return {
-    Days: timeSpan / DAY,
-    Hours: (timeSpan / HOUR) % 24,
-    Minutes: (timeSpan / MINUTE) % 60,
-    Seconds: (timeSpan / SECOND) % 60,
+    Days: Math.floor(timeSpan / DAY),
+    Hours: Math.floor((timeSpan / HOUR) % 24),
+    Minutes: Math.floor((timeSpan / MINUTE) % 60),
+    Seconds: Math.floor((timeSpan / SECOND) % 60),
   };
 };
