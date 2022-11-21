@@ -10,17 +10,16 @@ export const useTimer = (
   deadLine = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND
 ) => {
   const [timeSpan, setTimeSpan] = useState<number>(deadLine);
-  const countDownDate = new Date().getTime() + deadLine;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTimeSpan(countDownDate - Date.now());
+      setTimeSpan((timeSpan) => timeSpan - 1);
     }, interval);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [deadLine, interval]);
+  }, [timeSpan, interval]);
 
   return {
     Days: Math.floor(timeSpan / DAY),
