@@ -1,38 +1,22 @@
-import { CountDownContainer } from '../assets/styles/CountDown.style';
 import { useTimer } from '../hook/useTimer';
 
-type CountDownProps = {
-  deadLine: number;
-};
+import { CountDownBox, CountDownProps } from './CountDownBox.component';
+import { Section } from '../assets/styles/CountDown.style';
 
 const CountDown = ({ deadLine }: CountDownProps) => {
-  const { Days, Hours, Minutes, Seconds, timeIsUp } = useTimer(deadLine);
+  const { timeIsUp } = useTimer(deadLine);
 
   return (
-    <CountDownContainer>
+    <Section>
       {timeIsUp ? (
-        <div className="card">
-          <h2>time is up!</h2>
-        </div>
+        <h1>time is up!</h1>
       ) : (
         <>
-          {Object.entries({
-            Days,
-            Hours,
-            Minutes,
-            Seconds,
-          }).map(([timeUnit, value]) => (
-            <div key={timeUnit} className="card">
-              <div className="card-number-wrapper">
-                <span className="card-divider"></span>
-                <p>{`${value}`.padStart(2, '0')}</p>
-              </div>
-              <h2>{timeUnit}</h2>
-            </div>
-          ))}
+          <h1>We're launching soon</h1>
+          <CountDownBox deadLine={0} />
         </>
       )}
-    </CountDownContainer>
+    </Section>
   );
 };
 

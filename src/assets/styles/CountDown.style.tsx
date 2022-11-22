@@ -28,7 +28,7 @@ export const Section = styled.section`
     }
 `;
 
-export const CountDownContainer = styled.div`
+export const CountDownBoxContainer = styled.div`
   display: flex;
   transform: scale(0.5);
   gap: 2em;
