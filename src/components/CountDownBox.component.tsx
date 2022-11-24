@@ -1,4 +1,7 @@
-import { CountDownBoxContainer } from '../assets/styles/CountDown.style';
+import {
+  CountDownBoxContainer,
+  CountDownControl,
+} from '../assets/styles/CountDown.style';
 
 import { CountDownProps } from './CountDown.component';
 
@@ -29,14 +32,14 @@ export const CountDownBox = ({
           </div>
         ))}
       </CountDownBoxContainer>
-      <div>
+      <CountDownControl>
         <button onClick={() => setIsStarted(!isStarted)}>
           {isStarted ? 'pause' : 'start'}
         </button>
         <button onClick={reset} disabled={!isStarted}>
           reset
         </button>
-      </div>
+      </CountDownControl>
     </>
   );
 };

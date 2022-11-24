@@ -118,3 +118,46 @@ export const CountDownBoxContainer = styled.div`
     }
   }
 `;
+
+export const CountDownControl = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  margin-block: 1em;
+  gap: 1em;
+  @media screen and (min-width: 40em) {
+    flex-direction: row;
+    margin-block: 3em;
+    gap: 2em;
+  }
+  button {
+    cursor: pointer;
+    background: var(--soft-red);
+    color: var(--white);
+    border: none;
+    border-radius: 1.5em;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
+    @media screen and (min-width: 40em) {
+      font-size: 1rem;
+    }
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 2em 0.5em var(--soft-red);
+      }
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+      @media (hover: hover) {
+        &:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+`;
