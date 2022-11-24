@@ -1,10 +1,21 @@
 import { useTimer } from '../hook/useTimer';
 
-import { CountDownBox, CountDownProps } from './CountDownBox.component';
+import { CountDownBox } from './CountDownBox.component';
 import { Section } from '../assets/styles/CountDown.style';
 
+export type CountDownProps = {
+  deadLine: number;
+  Days: number;
+  Hours: number;
+  Minutes: number;
+  Seconds: number;
+  setIsStarted: any;
+  isStarted: boolean;
+  reset: any;
+};
+
 const CountDown = ({ deadLine }: CountDownProps) => {
-  const { timeIsUp } = useTimer(deadLine);
+  const { timeIsUp, Days, Hours, Minutes, Seconds, setIsStarted, isStarted, reset } = useTimer(deadLine)
 
   return (
     <Section>
@@ -13,7 +24,16 @@ const CountDown = ({ deadLine }: CountDownProps) => {
       ) : (
         <>
           <h1>We're launching soon</h1>
-          <CountDownBox deadLine={0} />
+          <CountDownBox
+            deadLine={0}
+            Days={Days}
+            Hours={Hours}
+            Minutes={Minutes}
+            Seconds={Seconds}
+            setIsStarted={setIsStarted}
+            isStarted={isStarted}
+            reset={reset}
+          />
         </>
       )}
     </Section>

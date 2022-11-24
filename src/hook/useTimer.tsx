@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -11,21 +11,31 @@ export const useTimer = (
 ) => {
   const [timeSpan, setTimeSpan] = useState<number>(deadLine);
   const [timeIsUp, setTimeIsUp] = useState<boolean>(false);
+  const [isStarted, setIsStarted] = useState<boolean>(false);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTimeSpan((timeSpan) => timeSpan - 1);
-      // Option when time is up => timeSpan = 0
+    if (isStarted) {
+      const initialInterval = setInterval(() => {
+        setTimeSpan((prevCount) => prevCount - 1);
+      }, interval);
+
+       if (!isStarted) {
+        clearInterval(initialInterval);
+      }
+
+      //Just a simple handler to make sure that the counter doesn't go to infinity negative.
       if (timeSpan === 0) {
         setTimeIsUp(true);
+        clearInterval(initialInterval);
         return;
       }
-    }, interval);
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [timeSpan, interval]);
+      return () => clearInterval(initialInterval);
+    }
+  }, [timeSpan, isStarted, interval]);
+
+  // const pause = () => setIsStarted(false);
+  const reset = () => setTimeSpan(deadLine);
 
   return {
     Days: Math.floor(timeSpan / DAY),
@@ -33,5 +43,10 @@ export const useTimer = (
     Minutes: Math.floor((timeSpan / MINUTE) % 60),
     Seconds: Math.floor((timeSpan / SECOND) % 60),
     timeIsUp,
+    reset,
+    isStarted,
+    setIsStarted,
+    timeSpan,
+    setTimeIsUp,
   };
 };
