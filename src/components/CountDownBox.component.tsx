@@ -1,4 +1,3 @@
-import { useTimer } from '../hook/useTimer';
 import { CountDownBoxContainer } from '../assets/styles/CountDown.style';
 
 import { CountDownProps } from './CountDown.component';

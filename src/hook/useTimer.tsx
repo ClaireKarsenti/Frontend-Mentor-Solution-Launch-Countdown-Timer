@@ -34,7 +34,6 @@ export const useTimer = (
     }
   }, [timeSpan, isStarted, interval]);
 
-  // const pause = () => setIsStarted(false);
   const reset = () => setTimeSpan(deadLine);
 
   return {
