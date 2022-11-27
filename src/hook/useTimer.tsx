@@ -1,29 +1,30 @@
 import { useState, useEffect } from 'react';
 
-const SECOND = 1000;
-const MINUTE = SECOND * 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
+const SECOND: number = 1000;
+const MINUTE: number = SECOND * 60;
+const HOUR: number = MINUTE * 60;
+const DAY: number = HOUR * 24;
 
 export const useTimer = (
-  interval = SECOND,
-  deadLine = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND
+  interval: number = SECOND,
+  deadLine: number = 8 * DAY + 23 * HOUR + 55 * MINUTE + 41 * SECOND
 ) => {
   const [timeSpan, setTimeSpan] = useState<number>(deadLine);
   const [timeIsUp, setTimeIsUp] = useState<boolean>(false);
   const [isStarted, setIsStarted] = useState<boolean>(false);
 
+  // Start and pause buttons:
   useEffect(() => {
     if (isStarted) {
-      const initialInterval = setInterval(() => {
+      const initialInterval: any = setInterval(() => {
         setTimeSpan((prevCount) => prevCount - 1);
       }, interval);
 
-       if (!isStarted) {
+      if (!isStarted) {
         clearInterval(initialInterval);
       }
 
-      //Just a simple handler to make sure that the counter doesn't go to infinity negative.
+      //Just a simple handler to make sure that the counter doesn't go to infinity negative:
       if (timeSpan === 0) {
         setTimeIsUp(true);
         clearInterval(initialInterval);
@@ -34,7 +35,8 @@ export const useTimer = (
     }
   }, [timeSpan, isStarted, interval]);
 
-  const reset = () => setTimeSpan(deadLine);
+  // Reset button:
+  const reset: () => void = () => setTimeSpan(deadLine);
 
   return {
     Days: Math.floor(timeSpan / DAY),

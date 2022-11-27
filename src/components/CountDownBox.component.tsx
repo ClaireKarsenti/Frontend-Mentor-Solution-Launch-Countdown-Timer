@@ -22,7 +22,7 @@ export const CountDownBox = ({
           Hours,
           Minutes,
           Seconds,
-        }).map(([timeUnit, value]) => (
+        })?.map(([timeUnit, value]) => (
           <div key={timeUnit} className="card">
             <div className="card-number-wrapper">
               <span className="card-divider"></span>

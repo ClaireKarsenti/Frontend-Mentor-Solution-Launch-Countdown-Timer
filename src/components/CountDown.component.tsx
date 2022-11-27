@@ -15,7 +15,16 @@ export type CountDownProps = {
 };
 
 const CountDown = ({ deadLine }: CountDownProps) => {
-  const { timeIsUp, Days, Hours, Minutes, Seconds, setIsStarted, isStarted, reset } = useTimer(deadLine)
+  const {
+    timeIsUp,
+    Days,
+    Hours,
+    Minutes,
+    Seconds,
+    setIsStarted,
+    isStarted,
+    reset,
+  } = useTimer(deadLine);
 
   return (
     <Section>
@@ -23,7 +32,7 @@ const CountDown = ({ deadLine }: CountDownProps) => {
         <h1>time is up!</h1>
       ) : (
         <>
-          <h1>We're launching soon</h1>
+          <h1>we're launching soon</h1>
           <CountDownBox
             deadLine={0}
             Days={Days}
