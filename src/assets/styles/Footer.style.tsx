@@ -2,17 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.footer`
   place-items: center;
-  position: relative;
-  bottom: 5em;
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
-  @media screen and (min-width: 50em) {
-    bottom: 8em;
-  }
   .socials a {
-    margin-block-end: 1em;
+    margin-block-end: 2em;
     margin-inline: 1.5em;
     @media screen and (min-width: 50em) {
       margin-block-end: 4em;

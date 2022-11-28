@@ -11,19 +11,16 @@ export const Section = styled.section`
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     line-height: 2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--white);
     font-weight: var(--fw);
     width: 100%;
-    margin-block: -10em 2.5em;
+    margin-block: -1em 1em;
     padding-inline: 1em;
-    @media screen and (min-width: 30em) {
-      padding-inline: 2em;
-    }
     @media screen and (min-width: 50em) {
       padding-inline: 0;
-      margin-block: -10em 0.4em;
-      font-size: 1rem;
+      margin-block: -2em 0;
+      font-size: 1.5rem;
     }
   }
 `;
@@ -90,7 +87,7 @@ export const CountDownBoxContainer = styled.div`
       transform: translate(0, -70px);
       border-radius: 0;
       width: 100%;
-      border-bottom: 1px solid var(--very-dark-blue);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
       &::before {
         position: absolute;
         content: '';
