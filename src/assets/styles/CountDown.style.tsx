@@ -27,8 +27,12 @@ export const Section = styled.section`
 
 export const CountDownBoxContainer = styled.div`
   display: flex;
-  transform: scale(0.5);
+  transform: scale(0.4);
   gap: 2em;
+  @media screen and (min-width: 30em) {
+    padding-block-start: 5em;
+    transform: scale(0.5);
+  }
   @media screen and (min-width: 40em) {
     padding-block-start: 5em;
     transform: scale(0.7);
@@ -69,13 +73,13 @@ export const CountDownBoxContainer = styled.div`
       p {
         color: var(--soft-red);
         font-weight: var(--fw);
-        font-size: 6rem;
+        font-size: 5rem;
       }
     }
     h2 {
       font-size: var(--fs);
       text-transform: uppercase;
-      letter-spacing: 0.3rem;
+      letter-spacing: 0.45rem;
       color: var(--grayish-blue);
       margin-block-start: 2em;
     }

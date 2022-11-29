@@ -3,7 +3,6 @@ import StarsBG from '../images/bg-stars.svg';
 import BG from '../images/pattern-hills.svg';
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');    
 :root {
   --grayish-blue: hsl(237, 18%, 59%);
   --soft-red: hsl(345, 95%, 68%);
@@ -19,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin: 0;
       box-sizing: border-box;        
-      
     }
 
 /* Box sizing rules */
@@ -101,7 +99,6 @@ export const GlobalStyle = createGlobalStyle`
     background: url(${StarsBG}) no-repeat, url(${BG}) no-repeat, linear-gradient(#1D1E28 0%, #261C2D 97%, #261A2D 100%) no-repeat ;
     background-color: var(--very-dark-blue);
     background-position: center 8%, bottom right 18%;
-    font-family: 'Red Hat Text', sans-serif;
     -webkit-font-smoothing: antialised;
     text-rendering: optimizeLegibility;
     display: flex;
