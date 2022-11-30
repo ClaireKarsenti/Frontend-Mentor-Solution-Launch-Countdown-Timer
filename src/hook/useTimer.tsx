@@ -31,7 +31,6 @@ export const useTimer = (
     }
 
     return () => clearInterval(initialInterval);
-    //   }
   }, [timeSpan, isStarted, interval]);
 
   // Reset button:
