@@ -15,24 +15,23 @@ export const useTimer = (
 
   // Start and pause buttons:
   useEffect(() => {
-    if (isStarted) {
-      const initialInterval: any = setInterval(() => {
-        setTimeSpan((prevCount) => prevCount - 1);
-      }, interval);
+    const initialInterval: any = setInterval(() => {
+      setTimeSpan((prevCount) => prevCount - SECOND);
+    }, SECOND);
 
-      if (!isStarted) {
-        clearInterval(initialInterval);
-      }
-
-      //Just a simple handler to make sure that the counter doesn't go to infinity negative:
-      if (timeSpan === 0) {
-        setTimeIsUp(true);
-        clearInterval(initialInterval);
-        return;
-      }
-
-      return () => clearInterval(initialInterval);
+    if (!isStarted) {
+      clearInterval(initialInterval);
     }
+
+    //Just a simple handler to make sure that the counter doesn't go to infinity negative:
+    if (timeSpan === 0) {
+      setTimeIsUp(true);
+      clearInterval(initialInterval);
+      return;
+    }
+
+    return () => clearInterval(initialInterval);
+    //   }
   }, [timeSpan, isStarted, interval]);
 
   // Reset button:
