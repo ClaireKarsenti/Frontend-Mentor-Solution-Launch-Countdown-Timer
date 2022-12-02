@@ -10,12 +10,12 @@ export const Section = styled.section`
   h1 {
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    line-height: 2rem;
-    font-size: 1.5rem;
+    line-height: 1.7rem;
+    font-size: 1.3rem;
     color: var(--white);
     font-weight: var(--fw);
     width: 100%;
-    margin-block: -1em 1em;
+    margin-block: -2.5em 1em;
     padding-inline: 1em;
     @media screen and (min-width: 50em) {
       padding-inline: 0;
@@ -29,6 +29,7 @@ export const CountDownBoxContainer = styled.div`
   display: flex;
   transform: scale(0.4);
   gap: 2em;
+  padding-block-start: 0em;
   @media screen and (min-width: 30em) {
     padding-block-start: 5em;
     transform: scale(0.5);
