@@ -50,6 +50,10 @@ Users should be able to:
 | ------- | ------------------------------------------------------------------------------- |
 | My work | ![Active states version](./src/assets/my-work/my-work-active-state-version.png) |
 
+#### Demo video
+
+https://user-images.githubusercontent.com/102292921/205677208-03fbd84e-74b4-44f3-a71a-fa3a8471b702.mov
+
 ### Links
 
 - Solution URL: [Code on GitHub](https://github.com/ClaireKarsenti/Launch-Countdown-Timer)
@@ -128,4 +132,4 @@ yarn install && yarn start
 ## Author
 
 - Linkedin - [Claire Karsenti](https://www.linkedin.com/in/claire-karsenti/)
-- Frontend Mentor - [@ClaireKarsent](https://www.frontendmentor.io/profile/ClaireKarsenti)
+- Frontend Mentor - [@ClaireKarsenti](https://www.frontendmentor.io/profile/ClaireKarsenti)
